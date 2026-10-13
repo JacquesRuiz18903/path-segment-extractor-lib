@@ -1,0 +1,17 @@
+{
+  "name": "path-segment-extractor-lib",
+  "version": "0.1.0",
+  "description": "Separates a path string into its directory, basename, filename, and extension parts",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
