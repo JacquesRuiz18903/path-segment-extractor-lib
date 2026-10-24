@@ -21,3 +21,10 @@ The trade-off: only `/` is treated as a separator. Windows backslash paths are n
 ## The edge you will hit
 
 A leading dot in the basename is treated as part of the name, not as an extension separator. So `.bashrc` has basename `.bashrc` and no extension, and `.app.conf` has filename `.app` with extension `.conf`. This matches the Unix shell convention for hidden files. A filename ending in a dot (`noext.`) yields an extension of `.` — the dot is preserved because the extension always includes its leading dot, mirroring `path.extname`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
